@@ -1,0 +1,29 @@
+#mainphoto{
+
+    /*filter:brightness(0.5);*/
+    background-position:center;
+    background-size:cover;
+    
+
+}
+.heading{
+    height:80vh;
+}
+.box{
+    background-size:cover;
+    background-image: url({{asset("img/box1.jpg")}});
+    filter:brightness(0.5);
+}
+.title-box{
+    font-family:'Encode Sans Expanded';
+}
+.equal-height-row {
+    display: flex;
+}
+.equal-height-row > .col-7 {
+    display: flex;
+    flex-direction: column;
+}
+.card {
+    flex: 1;
+}

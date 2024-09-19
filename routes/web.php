@@ -8,8 +8,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('auth.login');
-Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('auth.register');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('register', [LoginController::class, 'register']);
-Route::post('logout', [LoginController::class, 'logout'])->name('auth.logout');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+Route::post('/logout', [LoginController::class, 'logout'])->name('auth.logout');
+
+// Ruta para la vista de registro
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('auth.register');
+
+// Ruta para el manejo de la solicitud de registro
+Route::post('/register', [RegisterController::class, 'register'])->name('auth.register.post');
+

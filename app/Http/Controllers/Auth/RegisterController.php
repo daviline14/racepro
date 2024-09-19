@@ -24,11 +24,13 @@ class RegisterController extends Controller
         ]);
 
         User::create([
-            'username' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($request->password)
         ]);
 
         return redirect('/login')->with('success', 'Registration successful! Please log in.');
+
+        // return view('auth.login');
     }
 }

@@ -22,11 +22,11 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
+            'username' => 'required',
             'password' => 'required|min:6',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
             return redirect()->intended('index');

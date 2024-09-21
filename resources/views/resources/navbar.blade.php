@@ -5,7 +5,7 @@
         <div class="w-25">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/racepro/public">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -25,18 +25,50 @@
         </div>
 
         <!-- Logo al centro -->
-        <div class="mx-auto">
-            <a class="navbar-brand" href="/">
+        <div class="justify-content-center">
+            <a class="navbar-brand" href="/racepro/public">
                 <img src="{{ asset('img/Logo.png') }}" alt="RACEPRO" class="logo" style="height: 30px;">
             </a>
         </div>
 
-        <!-- Icono de usuario a la derecha -->
-        <div class="nav-icon ms-auto" style="position: relative;">
-            <a class="nav-link" href="{{ route('auth.login') }}">
-                <img src="{{ asset('img/login_icon.png') }}" alt="User Icon" style="height: 40px;">
-            </a>
+        @auth
+            <!-- Icono de usuario a la derecha -->
+            <div class="dropdown-center">
+                <!-- Imagen que actúa como botón del menú desplegable -->
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{{ asset('img/login_icon.png') }}" alt="Menu" style="width: 40px; height: 40px;">
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión
+                        <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+                        @csrf
+                        </form>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        @endauth
+        @guest
+        <div class='row'>
+            <div class='col'>
+                <button type="button" class="btn btn-outline-dark">
+                    <a href="{{ route('auth.login') }}" class='nav-link'>Regístrate</a>
+                </button>
+            </div>
+            <div class='col'>
+                <button type="button" class="btn btn-link">
+                    <a href="{{ route('auth.register') }}" class='nav-link'>Iniciar sesión</a>
+                </button>
+
+            </div>
         </div>
+
+        @endguest
+
     </div>
 </nav>
 

@@ -21,7 +21,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'username' => 'required',
             'password' => 'required|min:6',
         ]);
@@ -29,7 +29,7 @@ class LoginController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('index');
+            return redirect()->intended('home');
         }
 
         return redirect()->back()->withErrors([

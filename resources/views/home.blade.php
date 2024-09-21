@@ -86,6 +86,13 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class='col p-5 h-auto'>
+                <div class="d-flex justify-content-center ">
+                    <a class="btn btn-lg btn-light border border-2 border-dark fw-semibold" href="#" role="button">Ver todas las ligas</a>
+                </div>
+            </div>
+        </div>
     </div>
     @endsection
 

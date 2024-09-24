@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App/Models/League;
+use App\Models\League;
 
 class LeaguesController extends Controller
 {

@@ -54,16 +54,16 @@
         @endauth
         @guest
         <div class='row align-items-center' >
-            <div class='col-5'>
-                <button type="button" class="btn btn-outline-dark border border-dark border-2">
-                    <a href="{{ route('auth.register') }}" class='nav-link'>Regístrate</a>
-                </button>
-            </div>
             <div class='col-7'>
                 <button type="button" class="btn btn-link link-dark  link-offset-2 link-underline link-underline-opacity-0"">
-                    <a href="{{ route('auth.login') }}" class='nav-link fw-bold '>Iniciar sesión</a>
+                    <a href="{{ route('auth.login') }}" class='nav-link fw-semibold '>Iniciar sesión</a>
                 </button>
 
+            </div>
+            <div class='col-5'>
+                <button type="button" class="btn btn-outline-dark border border-dark border-2">
+                    <a href="{{ route('auth.register') }}" class='nav-link fw-bold'>Regístrate</a>
+                </button>
             </div>
         </div>
 

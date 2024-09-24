@@ -8,7 +8,7 @@
                     <a class="nav-link active" aria-current="page" href="/racepro/public">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="leagues">Ligas</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,15 +53,15 @@
             </div>
         @endauth
         @guest
-        <div class='row'>
-            <div class='col'>
-                <button type="button" class="btn btn-outline-dark">
-                    <a href="{{ route('auth.login') }}" class='nav-link'>Regístrate</a>
+        <div class='row align-items-center' >
+            <div class='col-5'>
+                <button type="button" class="btn btn-outline-dark border border-dark border-2">
+                    <a href="{{ route('auth.register') }}" class='nav-link'>Regístrate</a>
                 </button>
             </div>
-            <div class='col'>
-                <button type="button" class="btn btn-link">
-                    <a href="{{ route('auth.register') }}" class='nav-link'>Iniciar sesión</a>
+            <div class='col-7'>
+                <button type="button" class="btn btn-link link-dark  link-offset-2 link-underline link-underline-opacity-0"">
+                    <a href="{{ route('auth.login') }}" class='nav-link fw-bold '>Iniciar sesión</a>
                 </button>
 
             </div>

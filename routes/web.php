@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LeaguesController;
 
 Route::get('/', function () {
     return view('home');
@@ -17,4 +18,6 @@ Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('
 
 // Ruta para el manejo de la solicitud de registro
 Route::post('/register', [RegisterController::class, 'register'])->name('auth.register.post');
+
+Route::get('/leagues',[LeaguesController::class,'show'])->name('leagues.show');
 

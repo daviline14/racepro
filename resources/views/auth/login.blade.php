@@ -25,7 +25,7 @@
                                 <button type="submit" class='btn btn-dark btn-sm px-4'>Entrar</button>
                                 <p>
                                     ¿No tienes cuenta?
-                                    <a href='{{ route('auth.register') }}'> Regístrate</a>
+                                    <a class='link-dark link-underline-opacity-0 fw-bold' href='{{ route('auth.register') }}'> Regístrate</a>
                                 </p>
 
                             </div>

@@ -1,4 +1,9 @@
 import './bootstrap';
+import '../css/app.css'; // Importar los estilos
+import './darkmode.js';
+import '@fortawesome/fontawesome-free/css/all.css';
+ // Importar el script de modo oscuro
+
 
 var createError = require('http-errors');
 var express = require('express');

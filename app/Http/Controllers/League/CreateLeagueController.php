@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\League;
 
 use Illuminate\Http\Request;
 use App\Models\League;
+use App\Http\Controllers\Controller;
 
-class LeaguesController extends Controller
+class CreateLeagueController extends Controller
 {
     public function show(){
-        return view('league.leagues');
+        return view('league.create');
     }
-    public function create_league(Request $request){
+    public function create(Request $request){
         League::create([
             'name'=>$request->name,
             'category'=>$request->category,

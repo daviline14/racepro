@@ -9,7 +9,9 @@ use App\Http\Controllers\Controller;
 class LeaguesController extends Controller
 {
     public function show(){
-        return view('league.leagues');
+        $leagues=League::all();
+        return view('league.leagues',['leagues'=>$leagues]);
     }
+
 
 }

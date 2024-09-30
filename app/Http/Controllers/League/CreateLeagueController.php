@@ -12,16 +12,20 @@ class CreateLeagueController extends Controller
         return view('league.create');
     }
     public function create(Request $request){
-       /*  $request->validate([
-            'name'=>'required|string',
-            'category'=>'required'
-        ]); */
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'category' => 'required|integer',
+            'max_racers' => 'required|integer',
+            'simulator' => 'required|string',
+            'description' => 'nullable|string'
+        ]);
 
         /* $category = $request->input('category');
         $max_racers = $request->input('max_racers'); */
         // dd($request);
         League::create([
             'name'=>$request->name,
+            'simulator'=>$request->simulator,
             'category'=>$request->category,
             'max_racers'=>$request->max_racers,
             'description'=>$request->description

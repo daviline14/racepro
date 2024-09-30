@@ -12,6 +12,7 @@ class league extends Model
 
     protected $fillable = [
         'name',
+        'simulator',
         'category',
         'max_racers'
     ];

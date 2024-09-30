@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('category');
-            $table->integer('num_racers');
+            $table->integer('max_racers');
             $table->timestamps();
         });
     }

@@ -17,13 +17,23 @@
                             <label for="name" class='form-label fw-bold'>Nombre</label>
                         </div>
                         <div class="form-floating">
+                            <select class="form-select rounded border-dark border-2 mb-3" id='simulator' name='simulator' aria-label="Default select example">
+                                <option value="" disabled selected>Selecciona una simulador</option>
+                                <option value="1">Assetto Corsa</option>
+                                <option value="2">Assetto Corsa Competizione</option>
+                                <option value="3">F1 2024</option>
+                            </select>
+                            <label for="simulator" class='form-label fw-bold'>Juego</label>
+                        </div>
+                        <div class="form-floating">
                             <select class="form-select rounded border-dark border-2 mb-3" id='category' name='category' aria-label="Default select example">
                                 <option value="" disabled selected>Selecciona una categoría</option>
-                                <option value="Assetto Corsa">Assetto Corsa</option>
-                                <option value="Assetto Corsa Competizione">Assetto Corsa Competizione</option>
-                                <option value="F1 2024">F1 2024</option>
+                                <option value="1">GT3</option>
+                                <option value="2">GT2</option>
+                                <option value="3">GT2</option>
+                                <option value="4">TCX</option>
                             </select>
-                            <label for="category" class='form-label fw-bold'>Juego</label>
+                            <label for="category" class='form-label fw-bold'>Categoría</label>
                         </div>
                         <div class="form-floating">
                             <input type="number"  id='max_racers' name="max_racers" class='form-control mb-3 rounded  border-dark border-2' required>
@@ -31,7 +41,7 @@
                         </div>
 
                         <div class="form-floating">
-                            <textarea class="form-control fw-5 rounded  border-dark border-2" style="height: 100px" placeholder="Puedes escribir algo normal, o algo gracioso..." id="floatingTextarea"></textarea>
+                            <textarea class="form-control fw-5 rounded  border-dark border-2" style="height: 100px" placeholder="Puedes escribir algo normal, o algo gracioso..." id="description" name='description'></textarea>
                             <label for="description" class='form-label fw-bold'>Descripción</label>
 
                           </div>

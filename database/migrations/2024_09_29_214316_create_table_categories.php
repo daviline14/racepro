@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leagues', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('simulator');
-            $table->integer('category');
-            $table->integer('max_racers');
+            $table->string('simulator');
             $table->timestamps();
 
             $table->foreign('simulator')->references('id')->on('simulators')->onDelete('cascade');
-            $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leagues');
+        Schema::dropIfExists('categories');
     }
 };

@@ -68,6 +68,10 @@
         </div>
 
         @endguest
+        <button id="dark-mode-toggle" class="btn-sm rounded-circle border border-dark border-3">
+            <i id="mode-icon" class="fas fa-moon"></i>
+        </button>
+
 
     </div>
 </nav>

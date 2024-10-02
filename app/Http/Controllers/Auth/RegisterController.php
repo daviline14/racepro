@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return redirect('/login')->with('success', 'Registration successful! Please log in.');
+        return redirect('/login')->with('success', 'Te has registrado correctamente. Por favor, inicia sesión');
 
         // return view('auth.login');
     }

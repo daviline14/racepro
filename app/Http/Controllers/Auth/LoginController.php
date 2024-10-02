@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    protected $redirectTo = '/';
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -29,7 +31,7 @@ class LoginController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
+            return view('home');
         }
 
         return redirect()->back()->withErrors([

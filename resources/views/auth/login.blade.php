@@ -1,7 +1,11 @@
 @extends('layout')
 @include('resources.navbar')
 @section('content')
-
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="container-fluid" style='height: calc(100vh - 90px);'>
     <div class='row'>
         <div class="col-6 p-0 m-0">

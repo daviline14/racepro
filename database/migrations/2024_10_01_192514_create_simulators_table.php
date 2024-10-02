@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('simulators', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
-            $table->string('image_url')->nullable();
-            $table->string('icon_url')->nullable();
+            $table->string('icon_url');
+            $table->string('image_url');
+            $table->timestamps();
         });
     }
 

@@ -51,6 +51,8 @@
                                 <button type="submit" class='btn btn-dark btn-sm px-4'>Crear liga</button>
                             </div>
                         </div>
+                        <input type="hidden" id='user_id' name='user_id'>{{Auth::id()  }}
+                        @dd(Auth::id())
                     </div>
                 </form>
 

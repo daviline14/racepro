@@ -10,7 +10,7 @@ use App\Http\Controllers\League\HomeController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');

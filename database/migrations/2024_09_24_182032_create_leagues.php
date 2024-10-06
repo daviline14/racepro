@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('leagues', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('name');
             $table->integer('simulator');
             $table->integer('category');
             $table->integer('max_racers');
-            $table->uuid('user');
+            $table->unsignedBigInteger('user');
             $table->timestamps();
 
             $table->foreign('simulator')->references('id')->on('simulators')->onDelete('cascade');
             $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

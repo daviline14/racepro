@@ -7,6 +7,22 @@
         {{ session('success') }}
     </div>
 @endif
+@if(session('error'))
+<script>
+    // Espera 5 segundos (5000 ms) antes de ocultar el mensaje
+    setTimeout(function() {
+        let flashMessage = document.getElementById('flash-message');
+        if (flashMessage) {
+            flashMessage.style.transition = 'opacity 1s';
+            flashMessage.style.opacity = '0';
+            setTimeout(() => flashMessage.remove(), 1000); // Remover después de 1 segundo de transición
+        }
+    }, 5000); // 5000 ms = 5 segundos
+</script>
+<div id="flash-message" class="alert alert-danger m-5 position-absolute" style="z-index: 9999;">
+    {{ session('error') }}
+</div>
+@endif
 
     <h1 class='fw-bolder text-center text-uppercase p-5'>
         Ligas

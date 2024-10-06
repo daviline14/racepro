@@ -50,6 +50,9 @@
                     </a>
                     </li>
                 </ul>
+
+                    <a href="{{route('createleagues.create')}}">Crea tu liga</a>
+
             </div>
         @endauth
         @guest

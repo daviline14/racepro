@@ -46,13 +46,15 @@
 
                           </div>
 
+                              <input type="hidden" id='user' name='user' value={{ Auth::user()->id  }}>
+
                         <div class="">
                             <div class="d-grid gap-2 justify-content-center">
                                 <button type="submit" class='btn btn-dark btn-sm px-4'>Crear liga</button>
                             </div>
                         </div>
-                        <input type="hidden" id='user_id' name='user_id'>{{Auth::id()  }}
-                        @dd(Auth::id())
+
+
                     </div>
                 </form>
 

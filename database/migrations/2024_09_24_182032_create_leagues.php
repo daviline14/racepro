@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('leagues', function (Blueprint $table) {
-            $table->id();
+            $table->id()->primary();
             $table->string('name');
-            $table->integer('simulator');
-            $table->integer('category');
+            $table->unsignedBigInteger('simulator');
+            $table->unsignedBigInteger('category');
             $table->integer('max_racers');
             $table->unsignedBigInteger('user');
             $table->timestamps();

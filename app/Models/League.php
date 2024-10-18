@@ -13,6 +13,7 @@ class league extends Model
 
 
     protected $fillable = [
+        'key',
         'name',
         'simulator',
         'category',

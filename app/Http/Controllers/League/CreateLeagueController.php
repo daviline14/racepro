@@ -37,7 +37,8 @@ class CreateLeagueController extends Controller
             'category'=>$request->category,
             'max_racers'=>$request->max_racers,
             'user'=>$request->user,
-            'description'=>$request->description
+            'description'=>$request->description,
+            'key'=>Str::random(8)
 
         ]);
 

@@ -4,11 +4,9 @@
         <!-- Menú a la izquierda -->
         <div class="w-25">
             <ul class="navbar-nav mb-2 mb-lg-0">
+
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/racepro/public">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="leagues">Ligas</a>
+                    <a class="nav-link " href="leagues">Ligas</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,7 +24,7 @@
 
         <!-- Logo al centro -->
         <div class="justify-content-center">
-            <a class="navbar-brand" href="/racepro/public">
+            <a class="navbar-brand" href="{{ route('home.show') }}">
                 <img src="{{ asset('img/Logo.png') }}" alt="RACEPRO" class="logo" style="height: 30px;">
             </a>
         </div>
@@ -51,7 +49,7 @@
                     </li>
                 </ul>
 
-                    <a href="{{route('createleagues.create')}}">Crea tu liga</a>
+
 
             </div>
         @endauth
@@ -71,9 +69,7 @@
         </div>
 
         @endguest
-        <button id="dark-mode-toggle" class="btn-sm rounded-circle border border-dark border-3">
-            <i id="mode-icon" class="fas fa-moon"></i>
-        </button>
+
 
 
     </div>

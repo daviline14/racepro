@@ -29,7 +29,7 @@
                             <select class="form-select rounded border-dark border-2 mb-3" id='category' name='category' aria-label="Default select example">
                                 <option value="" disabled selected>Selecciona una categoría</option>
                                 <option value="1">GT3</option>
-                                <option value="2">GT2</option>
+                                <option value="2">GT4</option>
                                 <option value="3">GT2</option>
                                 <option value="4">TCX</option>
                             </select>

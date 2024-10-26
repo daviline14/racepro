@@ -13,16 +13,17 @@ class league extends Model
 
 
     protected $fillable = [
-        'key',
-        'name',
-        'simulator',
-        'category',
-        'max_racers',
-        'user'
+        'name', 'simulator_id', 'category_id', 'max_racers',
+        'creator_user_id', 'description', 'key', 'start_date', 'end_date'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+    public function categories()
+{
+    return $this->belongsToMany(Category::class, 'category_league');
+}
+
 }

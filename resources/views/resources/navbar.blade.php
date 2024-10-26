@@ -2,6 +2,9 @@
 <nav class="navbar navbar-expand-lg p-5 border-bottom border-dark border-2" style="height: 90px; background-color: white; border-bottom: 1px #333 solid;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <!-- Menú a la izquierda -->
+        <div class="row">
+
+        <div class="col-3">
         <div class="w-25">
             <ul class="navbar-nav mb-2 mb-lg-0">
 
@@ -21,14 +24,16 @@
                 </li>
             </ul>
         </div>
-
+    </div>
+    <div class="col-6">
         <!-- Logo al centro -->
         <div class="justify-content-center">
             <a class="navbar-brand" href="{{ route('home.show') }}">
                 <img src="{{ asset('img/Logo.png') }}" alt="RACEPRO" class="logo" style="height: 30px;">
             </a>
         </div>
-
+    </div>
+<div class="col-3">
         @auth
             <!-- Icono de usuario a la derecha -->
             <div class="dropdown-center">
@@ -69,8 +74,8 @@
         </div>
 
         @endguest
-
-
+    </div>
+    </div>
 
     </div>
 </nav>

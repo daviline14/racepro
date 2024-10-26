@@ -3,7 +3,7 @@
 @section('content')
 @include('resources.navbar')
 
-@vite('resources/css/league.css')
+@vite(['resources/css/league.css','resources/js/inscription.js'])
 
 <style>
     .flag {
@@ -16,16 +16,16 @@
 <div class="container">
     <div class="row  align-items-center p-5">
         <div class="col-6">
-            <h1 class="fw-bold" id='title'>
+            <h1 class="fw-bold title1">
                 {{ $league->name }}
             </h1>
         </div>
         <div class="col-6">
-            <div class="card rounded-5 p-4" style="width: 100%;height:calc(100vh - 190px);">
+            <div class="card rounded-5 p-4 shadow-lg border-dark-subtle" style="width: 100%;height:calc(100vh - 190px);">
                 <div class="card-body">
-                    <h5 class="card-title fs-2" >Requisitos</h5>
-                    <h5 class="card-title fs-2" >Calendario</h5>
-                    <table class="table table-hover">
+                    <h5 class="card-title fs-2 " >Requisitos</h5>
+                    <h5 class="card-title fs-2 " >Calendario</h5>
+                    <table class="table table-hover" style='background-color:#333'>
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -57,7 +57,54 @@
                         </tbody>
                       </table>
                 </div>
+                <button type="button" id='inscription' class="btn btn-outline-dark">Inscríbete</button>
               </div>
+              <div id="overlay"></div>
+              <div id="formContainer">
+                <form id="leagueForm">
+                    <!-- Botón de cerrar -->
+                    <button class="close-btn" id="closeForm">&times;</button>
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Coche</label>
+                        <input type="text" id="car" name="car" placeholder="Coche">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="car_number">Número</label>
+                        <input type="number" id="car_number" name="car_number" placeholder="Número de coche">
+                    </div>
+
+
+                    <button type="submit">Guardar Liga</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class='text-center '>
+                    <h2 class="fw-bold p-5 title2">
+                        Participantes
+                    </h2>
+                    <table class="table">
+                        <thead>
+                            <th scope="col">
+                                #
+                            </th>
+                            <th scope="col">
+                                Usuario
+                            </th>
+                            <th scope="col">
+                                Coche
+                            </th>
+                            <th scope="col">
+                                Categoría
+                            </th>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -81,11 +81,11 @@
             <div class="col-md-4 mb-4"> <!-- Usamos `col-md-4` para mantener la estructura de columnas en pantallas medianas -->
                 <div class="card" style="width: 100%;">
                     <!-- Flag Icon -->
-                    <img src="{{$league->image_url  }}" alt="EU Flag" class="flag-icon pt-1">
+                    <img src="{{$league->icon_url  }}" alt="EU Flag" class="flag-icon pt-1">
                     <!-- Card Content -->
                     <div class="card-body">
                         <h5 class="card-title fs-3">{{ $league->leagueName }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted d-inline-flex px-2 py-1 fw-semibold rounded-2 me-2 border
+                        {{-- <h6 class="card-subtitle mb-2 text-muted d-inline-flex px-2 py-1 fw-semibold rounded-2 me-2 border
                         @switch($league->categoryId)
                             @case(1)
                                 bg-success-subtle  border-success-subtle
@@ -99,11 +99,13 @@
                             @default
                         @endswitch  ">
                             {{ $league->categoryName }}
-                        </h6>
+                        </h6> --}}
                         <div class="row">
                             <div class="col">
                                 <div class="mt-5 mb-0 text-opacity-25">Created by</div>
-                                <div class="currency-amount"><img class='user-icon mr-2' src={{ $league->icon }}>{{ $league->username }}</div>
+                                <div class="currency-amount">@if (!empty($league->icon))
+                                    <img class='user-icon mr-2' src={{ $league->icon }}>
+                                @endif{{ $league->username }}</div>
                             </div>
                             <div class="col">
                                 <div class="mt-5 mb-0 text-opacity-25">Created at</div>
@@ -113,7 +115,7 @@
 
                         <div class="row pt-4">
                             <div class="btn rounded border-dark-subtle border-1">
-                                <a href="/racepro/public/leagues/{{ $league->key }}">Ver</a>
+                                <a href="/racepro/leagues/{{ $league->key }}">Ver</a>
                             </div>
                         </div>
                     </div>

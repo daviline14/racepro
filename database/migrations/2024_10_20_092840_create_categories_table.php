@@ -9,23 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('simulator');
             $table->timestamps();
-
-            $table->foreign('simulator')->references('id')->on('simulators')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('categories');
     }
+
 };

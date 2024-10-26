@@ -16,17 +16,26 @@
                             <input type="text" id="name" name="name" class='form-control rounded border-dark border-2 mb-3' required>
                             <label for="name" class='form-label fw-bold'>Nombre</label>
                         </div>
-                        <div class="form-floating">
-                            <select class="form-select rounded border-dark border-2 mb-3" id='simulator' name='simulator' aria-label="Default select example">
-                                <option value="" disabled selected>Selecciona una simulador</option>
-                                <option value="1">Assetto Corsa</option>
-                                <option value="2">Assetto Corsa Competizione</option>
-                                <option value="3">F1 2024</option>
+                        <div class="form-floating" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                            <select class="form-select rounded border-dark border-2 mb-3" id='simulator_id' name='simulator_id' disabled aria-label="Default select example" >
+                                <option value="">Selecciona un simulador</option>
+                                <option value="1">iRacing</option>
+                                <option value="2">Assetto Corsa</option>
+                                <option value="3" selected>Assetto Corsa Competizione</option>
+                                <option value="4">rFactor 2</option>
+                                <option value="5">Project CARS 2</option>
+                                <option value="6">rFactor</option>
+                                <option value="7">RaceRoom Racing Experience</option>
+                                <option value="8">Automobilista 2</option>
+                                <option value="9">Gran Turismo 7</option>
+                                <option value="10">Forza Motorsport</option>
                             </select>
                             <label for="simulator" class='form-label fw-bold'>Juego</label>
                         </div>
-                        <div class="form-floating">
-                            <select class="form-select rounded border-dark border-2 mb-3" id='category' name='category' aria-label="Default select example">
+                       {{--  <div class="form-floating">
+                            <select class="form-select rounded border-dark border-2 mb-3" id='category_id' name='category_id' aria-label="Default select example">
                                 <option value="" disabled selected>Selecciona una categoría</option>
                                 <option value="1">GT3</option>
                                 <option value="2">GT4</option>
@@ -34,10 +43,18 @@
                                 <option value="4">TCX</option>
                             </select>
                             <label for="category" class='form-label fw-bold'>Categoría</label>
-                        </div>
+                        </div> --}}
                         <div class="form-floating">
                             <input type="number"  id='max_racers' name="max_racers" class='form-control mb-3 rounded  border-dark border-2' required>
                             <label for="max_racers" class='form-label fw-bold'>Número de jugadores</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="date"  id='start_date' name="start_date" class='form-control mb-3 rounded  border-dark border-2' required>
+                            <label for="start_date" class='form-label fw-bold'>Fecha de inicio</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="date"  id='end_date' name="end_date" class='form-control mb-3 rounded  border-dark border-2' required>
+                            <label for="end_date" class='form-label fw-bold'>Fecha de fin</label>
                         </div>
 
                         <div class="form-floating">
@@ -46,7 +63,6 @@
 
                           </div>
 
-                              <input type="hidden" id='user' name='user' value={{ Auth::user()->id  }}>
 
                         <div class="">
                             <div class="d-grid gap-2 justify-content-center">

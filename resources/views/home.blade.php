@@ -52,44 +52,30 @@
                 <p class='text-center fs-1 fw-bolder'>Últimos campeonatos creados </p>
             </div>
         </div>
-            <div class='row'>
-                <div class='col'>
-                    <div class="card rounded rounded-5 mb-3 border border-2 border-dark ">
-                        <img src="{{ asset('img/box1.png') }}" class="card-img-top rounded-bottom rounded-5" alt="...">
-                        <div class="card-body ">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
+        <div class='row'>
+        @if (!empty($leagues))
+            @foreach ($leagues as $league)
+            <div class='col-4'>
+                <div class="card rounded rounded-5 mb-3 border border-2 border-dark ">
+                    <img src="{{ asset('img/box1.png') }}" class="card-img-top rounded-bottom rounded-5" alt="...">
+                    <div class="card-body ">
+                    <h5 class="card-title">{{ $league->name }}</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
+            @endforeach
+        @endif
 
-                <div class='col'>
-                    <div class="card rounded rounded-5 mb-3 border border-2 border-dark ">
-                        <img src="{{ asset('img/box1.png') }}" class="card-img-top rounded-bottom rounded-5" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class='col'>
-                    <div class="card rounded rounded-5 mb-3 border border-2 border-dark ">
-                        <img src="{{ asset('img/box1.png') }}" class="card-img-top rounded-bottom rounded-5" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
+
+
+
         <div class="row">
-            <div class='col p-5 h-auto'>
+            <div class='col p-5 h-25'>
                 <div class="d-flex justify-content-center ">
-                    <a class="btn btn-lg btn-light border border-2 border-dark fw-semibold" href="#" role="button">Ver todas las ligas</a>
+                    <a class="btn btn-lg btn-light border border-2 border-dark fw-semibold" href="{{ route('leagues.show') }}" role="button">Ver todas las ligas</a>
                 </div>
             </div>
         </div>

@@ -28,3 +28,5 @@ Route::post('/create-league',[CreateLeagueController::class,'create'])->name('cr
 
 
 Route::get('/leagues/{key}',[LeagueController::class,'show'])->name('league.show');
+
+Route::post('/leagues/{key}/{user}',[LeagueController::class,'inscription'])->name('inscription');

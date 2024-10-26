@@ -21,24 +21,28 @@ class CreateLeagueController extends Controller
     public function create(Request $request){
         $request->validate([
             'name' => 'required|string|max:255',
-            'category' => 'required|integer',
+            'simulator_id' => 'required|integer',
+
             'max_racers' => 'required|integer',
-            'simulator' => 'required|string',
+            'creator_user_id'=>'integer',
             'description' => 'nullable|string',
-            'user'=>'integer'
+            'start_date'=>'date',
+            'end_date'=>'date',
         ]);
 
         /* $category = $request->input('category');
         $max_racers = $request->input('max_racers'); */
-        //   dd(Auth::user()->id);
+            // dd($request);
         League::create([
             'name'=>$request->name,
-            'simulator'=>$request->simulator,
-            'category'=>$request->category,
+            'simulator_id'=>$request->simulator_id,
+
             'max_racers'=>$request->max_racers,
-            'user'=>$request->user,
+            'creator_user_id'=>Auth::id(),
             'description'=>$request->description,
-            'key'=>Str::random(8)
+            'key'=>Str::random(8),
+            'start_date'=>$request->start_date,
+            'end_date'=>$request->end_date
 
         ]);
 

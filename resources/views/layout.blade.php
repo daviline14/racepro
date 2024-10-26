@@ -13,7 +13,7 @@
     {{-- @vite(['resources/css/navbar.css','resources/css/login.css']) --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Incluir el CSS -->
-    @vite(['resources/js/app.js'])
+
 
 
 </head>
